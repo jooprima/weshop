@@ -113,3 +113,11 @@ body{
     font-size: 12px;
     cursor: pointer;
 }
+
+.notif {
+    background: #1e5474;
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
