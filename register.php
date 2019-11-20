@@ -1,6 +1,6 @@
 <div id="container-user-akses">
     
-    <form action="<?php echo BASE_URL."proses_register"; ?>" method="POST">
+    <form action="<?php echo BASE_URL."proses_register.php"; ?>" method="POST">
 
         <div class="element-form">
             <label for="">Nama Lengkap</label>
