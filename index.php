@@ -16,17 +16,33 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WESHOP | Toko Online ELektronik</title>
     <link rel="stylesheet" href="<?php echo BASE_URL."css/style.css"; ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo BASE_URL."css/banner.css"; ?>" type="text/css" />
+    <script src="<?php echo BASE_URL."js/jquery-1.9.1.min.js"; ?>"></script>
+    <script src="<?php echo BASE_URL."js\Slides-SlidesJS-3\source\jquery.slides.min.js"; ?>"></script>
+    <script>
+            $(function() {
+            $('#slides').slidesjs({
+                height: 350,
+                play: {auto:true,
+                    interval : 3000
+                },
+                navigation:false
+            });
+        });
+    </script>
 </head>
+
 <body>
 
     <div id="container">
-        <div id="header"> 
+        <div id="header">
             <a href="<?php echo BASE_URL."index.php"; ?>">
                 <img src="<?php echo BASE_URL."images/logo.png"; ?>" />
             </a>
@@ -43,14 +59,14 @@
                                     <a href='".BASE_URL."index.php?page=register'>Register</a>";
                         }
                     ?>
-                    
+
                 </div>
                 <a href="<?php echo BASE_URL."index.php?page=keranjang"; ?>" id="button-keranjang">
                     <img src="<?php echo BASE_URL."images/cart.png"; ?>" />
                 </a>
             </div>
 
-            
+
 
         </div>
 
@@ -70,6 +86,7 @@
             <p>copyright weshop 2019</p>
         </div>
     </div>
-    
+
 </body>
+
 </html>
