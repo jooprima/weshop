@@ -314,3 +314,45 @@ body{
 #kanan #frame-barang ul li .button-add-cart a:hover{
     background:orange;
 }
+
+#detail-barang {
+    background: white;
+    padding: 15px;
+}
+
+#detail-barang h2 {
+    margin-top: 0px;
+}
+
+#detail-barang #frame-gambar {
+    background: #fbfbfb;
+    padding: 20px;
+}
+
+#detail-barang #frame-harga {
+    margin: 15px 5px;
+}
+
+#detail-barang #frame-harga span {
+    font-size: 15px;
+    font-weight: bold;
+    color: red;
+}
+
+#detail-barang #frame-harga a {
+    text-decoration: none;
+    background: #1e5474;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    float: right;
+    border-radius: 4px;
+}
+
+#detail-barang #frame-harga a:hover{
+    background:orange;
+}
+
+#detail-barang #keterangan {
+    margin: 20px 0px;
+}
