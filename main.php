@@ -29,10 +29,10 @@
             <?php
 
                 if ($kategori_id) {
-                    $query = mysqli_query($koneksi,"select * from barang where status='on' and kategori_id='$kategori_id' order by rand() desc limit 9");
-                }else{
-                    $query = mysqli_query($koneksi,"select * from barang where status='on' order by rand() desc limit 9");
+                    $kategori_id = "and kategori_id='$kategori_id'";
                 }
+
+                $query = mysqli_query($koneksi,"select * from barang where status='on' $kategori_id order by rand() desc limit 9");
 
                 $no=1;
                 while ($row=mysqli_fetch_assoc($query)) {
