@@ -29,13 +29,17 @@
             <?php
 
                 if ($kategori_id) {
-                    $kategori_id = "and kategori_id='$kategori_id'";
+                    $kategori_id = "and barang.kategori_id='$kategori_id'";
                 }
 
-                $query = mysqli_query($koneksi,"select * from barang where status='on' $kategori_id order by rand() desc limit 9");
+                $query = mysqli_query($koneksi,"select barang.*,kategori.kategori from barang join kategori on barang.kategori_id=kategori.kategori_id where barang.status='on' $kategori_id order by rand() desc limit 9");
 
                 $no=1;
                 while ($row=mysqli_fetch_assoc($query)) {
+
+                    $kategori = strtolower($row["kategori"]);
+                    $barang = strtolower($row["nama_barang"]);
+                    $barang = str_replace(" ","-",$barang);
 
                     $style=false;
                     if ($no == 3) {
@@ -45,11 +49,11 @@
                     
                     echo "<li $style>
                         <p class='price'>".rupiah($row['harga'])."</p>
-                        <a href='".BASE_URL."index.php?page=detail&barang_id=$row[barang_id]'>
+                        <a href='".BASE_URL."$row[barang_id]/$kategori/$barang.html'>
                             <img src='".BASE_URL."images/barang/$row[gambar]' />
                         </a>
                         <div class='keterangan-gambar'>
-                            <p><a href='".BASE_URL."index.php?page=detail&barang_id=$row[barang_id]'>$row[nama_barang]</a></p>
+                            <p><a href='".BASE_URL."$row[barang_id]/$kategori/$barang'</a></p>
                             <span>Stok : $row[stok]</span>
                         </div>
                         <div class='button-add-cart'>
