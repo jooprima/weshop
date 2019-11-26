@@ -479,3 +479,8 @@ ul.pagination li a.active{
 .tombol-action:hover{
     background:orange;
 }
+
+.label-password {
+    display: flex;
+    justify-content: space-between;
+}

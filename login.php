@@ -22,8 +22,11 @@
         </div>
 
         <div class="element-form">
-            <label for="">Password</label>
-            <span><input type="password" name="password" /></span>
+            <div class="label-password">
+                <label for="">Password</label>
+                <i class="btn-hide-show far fa-eye-slash" title="show password"></i>
+            </div>
+                <span><input type="password" name="password" class="input-password" /></span>
         </div>
 
         <div class="element-form">

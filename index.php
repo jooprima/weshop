@@ -24,10 +24,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>WESHOP | Toko Online ELektronik</title>
+
+    <link rel="stylesheet" href="<?php echo BASE_URL."css/fontawesome-free-5.11.2-web/css/all.min.css"; ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo BASE_URL."css/style.css"; ?>" type="text/css" />
     <link rel="stylesheet" href="<?php echo BASE_URL."css/banner.css"; ?>" type="text/css" />
+
     <script src="<?php echo BASE_URL."js/jquery-1.9.1.min.js"; ?>"></script>
     <script src="<?php echo BASE_URL."js\Slides-SlidesJS-3\source\jquery.slides.min.js"; ?>"></script>
+    <script src="<?php echo BASE_URL."js\script.js"; ?>"></script>
+
     <script>
             $(function() {
             $('#slides').slidesjs({
