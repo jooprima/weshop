@@ -192,7 +192,7 @@ body {
 
 #frame-tambah {
     margin-bottom: 10px;
-    text-align: right;
+    overflow: hidden;
 }
 
 .tombol-action {
@@ -204,6 +204,7 @@ body {
     text-decoration: none;
     margin-right: 3px;
     font-size: 11px;
+    /* display: block; */
 }
 
 .tombol-action:hover {
@@ -444,6 +445,7 @@ ul.pagination li a {
     padding: 5px 7px;
     text-decoration: none;
     display: block;
+    border-radius: 4px;
 }
 
 ul.pagination li a:hover{
@@ -453,4 +455,27 @@ ul.pagination li a:hover{
 ul.pagination li a.active{
     background: #1e5474;
     color: white;
+}
+
+#frame-tambah #left {
+    float: left;
+}
+
+#frame-tambah #right {
+    float: right;
+}
+
+.tombol-action {
+    background: #1e5474;
+    color: white;
+    padding: 7px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 3px;
+    font-size: 11px;
+}
+
+.tombol-action:hover{
+    background:orange;
 }

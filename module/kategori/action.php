@@ -4,16 +4,19 @@
 
     admin_only("kategori",$level);
 
-    $kategori = $_POST['kategori'];
-    $status = $_POST['status'];
-    $button = $_POST['button'];
+    $button = isset($_POST['button']) ? $_POST['button'] : $_GET['button'] ;
+    $kategori_id = isset($_GET['kategori_id']) ? $_GET['kategori_id'] : "";
+    
+    $kategori = isset($_POST['kategori']) ? $_POST['kategori'] : "";
+    $status = isset($_POST['status']) ? $_POST['status'] : "";
 
     if ($button == "Add") {
         mysqli_query($koneksi,"insert into kategori (kategori,status) values ('$kategori','$status')");
     }elseif ($button == "Update") {
-        $kategori_id = $_GET['kategori_id'];
         mysqli_query($koneksi,"update kategori set kategori='$kategori',
                                                     status='$status' where kategori_id='$kategori_id'");
+    }elseif ($button == "Delete") {
+        mysqli_query($koneksi,"delete from kategori where kategori_id='$kategori_id'");
     }
 
     

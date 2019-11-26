@@ -4,13 +4,15 @@
 
     admin_only("barang",$level);
 
-    $nama_barang = $_POST['nama_barang'];
-    $kategori_id = $_POST['kategori_id'];
-    $spesifikasi = $_POST['spesifikasi'];
-    $status = $_POST['status'];
-    $button = $_POST['button'];
-    $harga = $_POST['harga'];
-    $stok = $_POST['stok'];
+    $button = isset($_POST['button']) ? $_POST['button'] : $_GET['button'] ;
+    $barang_id = isset($_GET['barang_id']) ? $_GET['barang_id'] : "";
+
+    $nama_barang = isset($_POST['nama_barang']) ? $_POST['nama_barang'] :false ;
+    $kategori_id = isset($_POST['kategori_id']) ? $_POST['kategori_id'] : false;
+    $spesifikasi = isset($_POST['spesifikasi']) ? $_POST['spesifikasi'] : false;
+    $status = isset($_POST['status']) ? $_POST['status'] : false;
+    $harga = isset($_POST['harga']) ? $_POST['harga'] : false;
+    $stok = isset($_POST['stok']) ? $_POST['stok'] : false;
     $update_gambar = "";
 
     if (!empty($_FILES["file"]["name"])) {
@@ -26,7 +28,6 @@
                                 values ('$nama_barang','$kategori_id','$spesifikasi','$nama_file','$harga','$stok','$status')");
     }
     elseif ($button == "Update") {
-        $barang_id = $_GET['barang_id'];
         mysqli_query($koneksi,"update barang set kategori_id='$kategori_id',
                                                     nama_barang='$nama_barang',
                                                     spesifikasi='$spesifikasi',
@@ -34,6 +35,8 @@
                                                     stok='$stok',
                                                     status='$status'
                                                     $update_gambar where barang_id='$barang_id'");
+    }elseif ($button == "Delete") {
+        mysqli_query($koneksi,"delete from barang where barang_id='$barang_id'");
     }
 
     
